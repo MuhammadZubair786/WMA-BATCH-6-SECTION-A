@@ -1,0 +1,54 @@
+html tag :
+tag name
+tag attribute
+tag attribute value
+
+behaviour tag :
+1) unapir tag: itselfclose 
+2) pair tag : open or close
+
+basic template : shift+1=>!
+
+heading tag :(h) h1=>large heading
+h6=> small heading(blockline tag )(pair tag )
+
+b =bold text(inline tag )(pair tag )
+
+br=> break line (block tag )(unpair tag)
+
+p=>paragraph()(block line)(pair tag)(extra spaces remove (whitespace))
+
+pre=>(block )(pair tag )
+
+br:break :
+hr:horitional row: color ,size ,width
+heading: 
+	 ggsgdgsad
+
+
+
+
+
+
+
+h1 ,h6
+p=>hello world 
+
+html editior:
+student@1234
+
+
+1) BLOCK LINE: GET 100% WIDTH
+2) INLINE : GET only TEXT WIDTH 
+
+html tag :text tag (INLINE )
+
+
+
+
+
+
+
+
+
+
