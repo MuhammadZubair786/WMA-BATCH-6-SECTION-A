@@ -1,0 +1,35 @@
+/* body{
+    background-color: red;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+} */
+ table{
+    width: 500px;
+    margin: auto;
+    
+ }
+ .new{
+    font-size: 50px;
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+ h1{
+    text-align: center;
+ }
+ div{
+    border: 1px solid grey;
+    width: 600px;
+    margin: auto;
+ }
+
+/* table{
+    width: 80%;
+    margin: 20px;
+
+}
+tr,td{
+    border: 1px solid grey;
+    border-radius: 20%;
+    padding: 20px;
+} */
