@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="cityName" />
+    <h1 id="city"></h1>
+    <h1 id="sehri"></h1>
+    <h1 id="Iftar"></h1>
+    <script>
+      let cityName = document.getElementById("cityName");
+      let city = document.getElementById("city");
+      let sehri = document.getElementById("sehri");
+      let Iftar = document.getElementById("Iftar");
+
+      let date = new Date
+      let newDate = date.getDate()+"-"+parseInt(date.getMonth()+1)+"-"+date.getFullYear()
+
+      let textTimer;
+      cityName.addEventListener("input", () => {
+        clearTimeout(textTimer);
+
+        textTimer = setTimeout(() => {
+          getTime();
+          cityName.setAttribute("readonly", true);
+        }, 2000);
+      });
+
+      let getTime = async () => {
+        await fetch(
+          `https://api.aladhan.com/v1/timingsByCity/${newDate}?city=${cityName.value}&country=Pakistan&method=1`,
+        )
+          .then(async (response) => {
+            let data = await response.json();
+            console.log(data);
+            city.innerText="City name "+cityName.value
+            sehri.innerText="Sehri Time"+data["data"]["timings"]["Fajr"]
+            Iftar.innerText="Iftar Time"+data["data"]["timings"]["Maghrib"]
+
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      };
+    </script>
+  </body>
+</html>

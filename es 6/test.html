@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="display: none" id="head">Test typing start</h1>
+    <b id="time"></b>
+    <input type="text" name="" id="input" />
+    <button id="reset" style="display: none">reset</button>
+    <script>
+      let input = document.getElementById("input");
+      let head = document.getElementById("head");
+      let reset = document.getElementById("reset");
+      let time = document.getElementById("time");
+
+      let typingTimer;
+      let count = 1;
+      let checkTest = false;
+
+      input.addEventListener("input", () => {
+        if (checkTest == false) {
+          typingTest();
+          head.style.display = "block";
+          checkTest = true;
+        }
+      });
+
+      let typingTest = () => {
+        time.innerText = "timer second : " + count;
+        typingTimer = setInterval(() => {
+          count++;
+          time.innerText = "timer second : " + count;
+
+          if (count == 5) {
+            clearInterval(typingTimer);
+            console.log(input.value.length);
+            let words = input.value.trim().split(" ");
+            console.log(words);
+            head.innerText = "typing test end";
+            input.setAttribute("readonly", true);
+            reset.style.display = "inline";
+          }
+        }, 1000);
+      };
+
+      reset.addEventListener("click", () => {
+        window.location.reload();
+      });
+
+      //   5 second = > words
+      //   input.addEventListener("input", () => {
+      //     clearTimeout(typingTimer);
+      //     console.log(input.value.length);
+      //   });
+
+      //   count++;
+
+      // console.log("2 second complete")
+      // input.setAttribute("readonly",true
+    </script>
+  </body>
+</html>
